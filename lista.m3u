@@ -1,18 +1,27 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://i.imgur.com/7vGvH8O.png", LATINA HD
+#EXTINF:-1 tvg-logo="https://i.imgur.com/7vGvH8O.png" group-title="NACIONAL", LATINA HD
 https://sc.latina.pe/live/latina/playlist.m3u8|User-Agent=Mozilla/5.0
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/2U5I2Pj.png", TV PERU
+#EXTINF:-1 tvg-logo="https://i.imgur.com/2U5I2Pj.png" group-title="NACIONAL", TV PERU
 https://cdnb.tvperu.gob.pe/live/tvperu/playlist.m3u8|User-Agent=Mozilla/5.0
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/3Z6Kz0B.png", ATV HD
+#EXTINF:-1 tvg-logo="https://i.imgur.com/3Z6Kz0B.png" group-title="NACIONAL", ATV HD
 https://atv.pe/live/atv/playlist.m3u8|User-Agent=Mozilla/5.0
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/O6L6ZpX.png", PANAMERICANA
+#EXTINF:-1 tvg-logo="https://i.imgur.com/O6L6ZpX.png" group-title="NACIONAL", PANAMERICANA
 https://panamericana.pe/live/panamericana/playlist.m3u8|User-Agent=Mozilla/5.0&Referer=https://panamericana.pe/
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/w9U9Z8N.png", UCAYALINA TV (PUCALLPA)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/w9U9Z8N.png" group-title="REGIONAL", UCAYALINA TV (PUCALLPA)
 https://5a39626354366.streamlock.net/ucayalina/ucayalina/playlist.m3u8|User-Agent=Mozilla/5.0
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/8L8n2Xk.png", TV ORIENTE (IQUITOS)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/8L8n2Xk.png" group-title="REGIONAL", TV ORIENTE (IQUITOS)
 https://593193693e502.streamlock.net:443/tvoriente/tvoriente/playlist.m3u8|User-Agent=Mozilla/5.0
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/vH5R9Uu.png" group-title="CINE", PLUTO TV CINE ACCION
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58a33a05f17f4116938927a4/master.m3u8?deviceMake=web&deviceModel=web&deviceType=web
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/vH5R9Uu.png" group-title="KIDS", NICK CLASSIC
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5d669299403a4c0009c95d9e/master.m3u8?deviceMake=web&deviceModel=web&deviceType=web
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/vH5R9Uu.png" group-title="COMEDIA", SOUTH PARK
+https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5d669145403a4c0009c95d93/master.m3u8?deviceMake=web&deviceModel=web&deviceType=web

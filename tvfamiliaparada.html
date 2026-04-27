@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV FAMILIA PRADA - OFICIAL</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        :root { --main-color: #00ff88; --bg-color: #0a0a0a; --panel-bg: #161616; }
+        body { background: var(--bg-color); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; height: 100vh; }
+        #sidebar { width: 300px; background: var(--panel-bg); border-right: 1px solid #333; overflow-y: auto; padding: 20px; }
+        #main { flex-grow: 1; display: flex; flex-direction: column; background: #000; }
+        .logo-area { text-align: center; padding-bottom: 20px; border-bottom: 1px solid #333; margin-bottom: 20px; }
+        .logo-area h1 { color: var(--main-color); font-size: 1.4em; margin: 0; }
+        .canal-btn { width: 100%; background: #222; color: #ccc; border: 1px solid #333; padding: 12px; margin-bottom: 8px; text-align: left; cursor: pointer; border-radius: 6px; transition: 0.3s; display: flex; align-items: center; }
+        .canal-btn:hover { background: var(--main-color); color: black; font-weight: bold; transform: translateX(5px); }
+        .group-title { color: var(--main-color); font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; margin: 20px 0 10px; display: block; opacity: 0.7; }
+        video { width: 100%; height: 75vh; outline: none; }
+        #status { padding: 20px; background: var(--panel-bg); }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="logo-area">
+        <h1>TV FAMILIA PRADA</h1>
+        <small style="color: gray;">Soporte Técnico: Josué P.</small>
+    </div>
+
+    <span class="group-title">Canales de Lima</span>
+    <button class="canal-btn" onclick="load('https://sc.latina.pe/live/latina/playlist.m3u8')">📺 Latina HD</button>
+    <button class="canal-btn" onclick="load('https://atv.pe/live/atv/playlist.m3u8')">📺 ATV HD</button>
+    <button class="canal-btn" onclick="load('https://panamericana.pe/live/panamericana/playlist.m3u8')">📺 Panamericana</button>
+    <button class="canal-btn" onclick="load('https://cdnb.tvperu.gob.pe/live/tvperu/playlist.m3u8')">📺 TV Perú</button>
+    
+    <span class="group-title">Regionales y Religión</span>
+    <button class="canal-btn" onclick="load('https://5a39626354366.streamlock.net/ucayalina/ucayalina/playlist.m3u8')">🌳 Ucayalina (Pucallpa)</button>
+    <button class="canal-btn" onclick="load('https://cdn.btvperu.com/live/betel/playlist.m3u8')">🙏 Betel TV</button>
+
+    <span class="group-title">Entretenimiento & Cine</span>
+    <button class="canal-btn" onclick="load('https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/58a33a05f17f4116938927a4/master.m3u8?deviceType=web')">🎬 Cine Acción</button>
+    <button class="canal-btn" onclick="load('https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/590391696b99097970d47781/master.m3u8?deviceType=web')">🎵 MTV Music</button>
+</div>
+
+<div id="main">
+    <video id="video" controls autoplay playsinline></video>
+    <div id="status">
+        <h2 id="canal-nombre" style="margin:0; font-size: 1.2em;">Seleccione un canal</h2>
+        <p style="color: var(--main-color); font-size: 0.9em; margin: 5px 0 0;">Estado: En línea con el servidor GitHub</p>
+    </div>
+</div>
+
+<script>
+    const video = document.getElementById('video');
+    const hls = new Hls();
+    function load(url) {
+        document.getElementById('canal-nombre').innerText = "Sintonizando...";
+        if (Hls.isSupported()) {
+            hls.loadSource(url);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                video.play();
+                document.getElementById('canal-nombre').innerText = "Señal en Vivo";
+            });
+        }
+    }
+</script>
+</body>
+</html>
